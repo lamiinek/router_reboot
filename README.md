@@ -1,2 +1,2 @@
 # router_reboot
-was tired of having to go to my router and press the restart button(~ once/day). so i made this simple script that remotely reboot my home router
+I was tired of having to go to my router and press the restart button(~ once/day). Also i was too lazy to go to the router's web interface, type 192.168.1.1, enter username an password, go through the menu and stuff. So I made this simple script that remotely reboot my home router in seconds :)
