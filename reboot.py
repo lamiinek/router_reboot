@@ -32,7 +32,7 @@ def reboot(user, pwd):
 		if user and pwd:
 
 			print("Router rebooting...\n")
-			time.sleep(3)
+			#time.sleep(3)
 			req = requests.get("http://"+user+":"+pwd+"@192.168.1.1/rebootinfo.cgi")
 			status = req.status_code
 
