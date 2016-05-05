@@ -3,4 +3,9 @@ I was tired of having to go to my router and press the restart button(at least t
 
 V2: the script can keep rebooting the router till it can access the internet. Saving me numerous manual reboots.
 
-###works with python 3
+*python 3*
+
+##Screenshots
+![alt tag](https://github.com/lamiinek/router_reboot/blob/master/Screenshot1.png)
+![alt tag](https://github.com/lamiinek/router_reboot/blob/master/Screenshot2.png)
+![alt tag](https://github.com/lamiinek/router_reboot/blob/master/Screenshot3.png)
