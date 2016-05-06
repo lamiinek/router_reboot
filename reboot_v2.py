@@ -27,24 +27,32 @@ class Reboot_router:
 
 	def reboot(self):
 
-		opts = input("Options: \n\tr = reboot\n\trl = loop reboot till connected\n\tc = cancel\n> ").lower()
 
-		if opts == "r":
-			
-			print("Rebooting")
-			req = requests.get("http://"+self.user+":"+self.passw+"@"+self.url)
+		opts = "Usage: \nr  :\treboot\nrl :\tloop reboot till connected\n"
 
-		elif opts == "rl":
-			
-			print("Loop Reboot mode started!\n")
-			delay = 135 # 2 minutes 15 secs
-			while self.con == False:
-				self.check_internet()
-				time.sleep(delay)
+		if len(sys.argv) > 1:
 
-		elif opts == "c":
-			
-			print("Cancelled")
+			arg = sys.argv[1]
+
+			if arg == "r":
+				
+				print("Rebooting...")
+				req = requests.get("http://"+self.user+":"+self.passw+"@"+self.url)
+
+			elif arg == "rl":
+				
+				print("Loop Reboot mode started!\n")
+				delay = 180 # seconds
+				while self.con == False:
+					self.check_internet()
+					time.sleep(delay)
+
+			else:
+				print(opts)
+
+		else:
+			print(opts)
+
 
 	def check_internet(self):
 		host = "www.google.sn"
@@ -53,11 +61,11 @@ class Reboot_router:
 			s = socket.create_connection((h, 80), 2)
 			print(time.strftime("%H:%M:%S")+" - connected")
 			self.con = True
-			
+
 		except:
 			print(time.strftime("%H:%M:%S")+" - No internet access")
 			#reboot
 			requests.get("http://"+self.user+":"+self.passw+"@"+self.url)
 
 
-rr = Reboot_router()
+Reboot_router()
